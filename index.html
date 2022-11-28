@@ -179,18 +179,17 @@
       //consoleTrace.addEventListener("click", () => {
       //console.trace();
 
-      function func1() {
-        console.trace("This is a trace button");
-      }
-      function func2() {
-        func1();
-      }
-      function func3() {
-        func2();
-      }
-
       let consoleTrace = errorBtns[13];
       consoleTrace.addEventListener("click", () => {
+        function func1() {
+          console.trace("trace");
+        }
+        function func2() {
+          func1();
+        }
+        function func3() {
+          func2();
+        }
         func3();
       });
 
@@ -216,9 +215,6 @@
       });
 
       //global error handler
-      window.addEventListener("error", (e) => {
-        console.error("oops, error" + e.message);
-      });
     </script>
   </body>
 </html>
